@@ -1,4 +1,4 @@
-# 🚚 Vehicle Routing Problem (VRP) Logistics Optimizer
+# Vehicle Routing Problem (VRP) Logistics Optimizer
 
 ![Python](https://img.shields.io/badge/Python-3.13+-3776AB?style=flat&logo=python&logoColor=white)
 ![OSMnx](https://img.shields.io/badge/OSMnx-GIS%20Routing-blue?style=flat)
@@ -10,7 +10,7 @@ An end-to-end routing optimization engine designed for urban delivery networks. 
 
 ---
 
-## 📌 Project Overview & Logistics Problem
+## Project Overview & Logistics Problem
 
 The objective is to optimize urban last-mile distribution logistics for a retail chain across the metropolitan area of Warsaw, Poland:
 * **Network Topology:** 1 central distribution depot (Ochota) serving 50 designated store delivery nodes.
@@ -20,7 +20,7 @@ The objective is to optimize urban last-mile distribution logistics for a retail
 
 ---
 
-## 🗺️ Visual Results
+## Visual Results
 
 ### Input: Distribution Network (50 Retail Nodes + Central Depot)
 ![Distribution Network](cvrp_nodes.jpg)
@@ -37,7 +37,7 @@ The objective is to optimize urban last-mile distribution logistics for a retail
 
 ---
 
-## ⚙️ Architecture & Technical Methodology
+## Architecture & Technical Methodology
 
 1. **Graph Construction & Geolocation:**
    * Node coordinates parsed via OpenStreetMap and `Overpass API`.
@@ -55,7 +55,7 @@ The objective is to optimize urban last-mile distribution logistics for a retail
 
 ---
 
-## 📊 Benchmark Comparison & Empirical Results
+## Benchmark Comparison & Empirical Results
 
 The models were evaluated against the human-planned baseline routes (285.00 km, 11:01 h drive time). Performance was measured using the standard Optimality Gap metric:
 
@@ -76,7 +76,7 @@ $$Gap_{opt} = \frac{c_{Heur} - c_{Opt}}{max(c_{Opt}, \epsilon)} \times 100\%$$
 
 ---
 
-## 🚀 Installation & Usage
+## Installation & Usage
 
 ```bash
 # 1. Clone the repository
