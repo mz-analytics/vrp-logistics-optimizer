@@ -1,4 +1,3 @@
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github&logoColor=white)](https://github.com/mz-analytics/vrp-logistics-optimizer)
 # 🚚 Vehicle Routing Problem (VRP) Logistics Optimizer
 
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat&logo=python&logoColor=white)
@@ -17,7 +16,7 @@ Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel
 ![Distribution Network](cvrp_nodes.jpg)
 
 ### Output: Optimized Vehicle Routes (Tabu Search)
-![Optimized Routes](f569ac65-8385-4844-b01d-f927a254421a.jpg)
+📄 [Download Full Route Optimization Report (PDF)](cvrp_routes_optimized.pdf)
 
 ---
 
@@ -41,20 +40,13 @@ Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel
 
 ## 🚀 Installation & Usage
 
-### 1. Clone repository & install dependencies:
 ```bash
+# 1. Clone repository & enter folder
 git clone [https://github.com/mz-analytics/vrp-logistics-optimizer.git](https://github.com/mz-analytics/vrp-logistics-optimizer.git)
 cd vrp-logistics-optimizer
+
+# 2. Install dependencies
 pip install -r requirements.txt
-# Vehicle Routing Problem (VRP) Logistics Optimizer
 
-Optimization tool solving multi-vehicle routing problems with capacity and driving time constraints using real road networks.
-
-# Features
-- Real-world road routing with `OSMnx` and `NetworkX` (Warsaw network).
-- Heuristics: Nearest Neighbor (NN), Sweep, Clarke-Wright (CW).
-- Metaheuristic: Tabu Search (Relocate, Swap, 2-opt).
-- Interactive route maps generated with `Folium`.
-
-# Tech Stack
-`Python` `OSMnx` `NetworkX` `Folium`
+# 3. Run solver
+python vrp_optimizer.py
