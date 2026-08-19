@@ -4,7 +4,6 @@
 ![OSMnx](https://img.shields.io/badge/OSMnx-GIS%20Routing-blue?style=flat)
 ![NetworkX](https://img.shields.io/badge/NetworkX-Graph%20Theory-orange?style=flat)
 ![Folium](https://img.shields.io/badge/Folium-Interactive%20Maps-77B829?style=flat&logo=leaflet&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 
 Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel-time constraints, optimized over real-world road networks (Warsaw, Poland).
 
