@@ -13,10 +13,10 @@ An end-to-end routing optimization engine designed for urban delivery networks. 
 ## 📌 Project Overview & Logistics Problem
 
 The objective is to optimize urban last-mile distribution logistics for a retail chain across the metropolitan area of Warsaw, Poland:
-* **Network Topology:** 1 central distribution depot (Ochota) serving 50 designated store delivery nodes[cite: 1].
-* **Fleet Constraints:** Up to 5–6 delivery vehicles (Renault Master 3.5t FWD, payload 1,473 kg, fuel consumption: 211g CO2/km)[cite: 1].
-* **Operational Assumptions:** Each truck handles up to 10 deliveries per route[cite: 1]. Average urban travel speed set to 33.5 km/h with 15-minute service/unloading duration per stop[cite: 1].
-* **Time Windows:** Strict 7-hour delivery window (05:00–12:00) modeled and constrained under VRPTW[cite: 1].
+* **Network Topology:** 1 central distribution depot (Ochota) serving 50 designated store delivery nodes.
+* **Fleet Constraints:** Up to 5–6 delivery vehicles (Renault Master 3.5t FWD, payload 1,473 kg, fuel consumption: 211g CO2/km).
+* **Operational Assumptions:** Each truck handles up to 10 deliveries per route. Average urban travel speed set to 33.5 km/h with 15-minute service/unloading duration per stop.
+* **Time Windows:** Strict 7-hour delivery window (05:00–12:00) modeled and constrained under VRPTW.
 
 ---
 
@@ -40,24 +40,24 @@ The objective is to optimize urban last-mile distribution logistics for a retail
 ## ⚙️ Architecture & Technical Methodology
 
 1. **Graph Construction & Geolocation:**
-   * Node coordinates parsed via OpenStreetMap and `Overpass API`[cite: 1].
-   * Road network extraction and topological driving graph constructed using `OSMnx` (`ox.graph_from_place`)[cite: 1].
-   * Real road network shortest distance matrix ($51 \times 51$) computed using Dijkstra's algorithm via `NetworkX`[cite: 1].
+   * Node coordinates parsed via OpenStreetMap and `Overpass API`.
+   * Road network extraction and topological driving graph constructed using `OSMnx` (`ox.graph_from_place`).
+   * Real road network shortest distance matrix ($51 \times 51$) computed using Dijkstra's algorithm via `NetworkX`.
 
 2. **Implemented Solvers:**
    * **Sweep Algorithm (Polar Angle Method):** Angular transformation relative to the central depot (`atan2(Δy, Δx)`) followed by radial sector clustering and route sequencing.
-   * **Clarke-Wright Savings Algorithm:** Iterative route merging maximizing edge savings ($s_{ij} = c_{0i} + c_{0j} - c_{ij}$) subject to capacity and cycle elimination constraints[cite: 1].
-   * **Nearest Neighbor (NN):** Greedy sequential node insertion minimizing step-by-step connection costs[cite: 1].
-   * **VRPTW Handling:** Heuristic load re-allocation and penalty constraints enforcing strict operational windows and driver service times[cite: 1].
+   * **Clarke-Wright Savings Algorithm:** Iterative route merging maximizing edge savings ($s_{ij} = c_{0i} + c_{0j} - c_{ij}$) subject to capacity and cycle elimination constraints.
+   * **Nearest Neighbor (NN):** Greedy sequential node insertion minimizing step-by-step connection costs.
+   * **VRPTW Handling:** Heuristic load re-allocation and penalty constraints enforcing strict operational windows and driver service times.
 
 3. **Geospatial Visualization:**
-   * Interactive, multi-layered route maps rendered using `Folium` directly overlaying OpenStreetMap polylines[cite: 1].
+   * Interactive, multi-layered route maps rendered using `Folium` directly overlaying OpenStreetMap polylines.
 
 ---
 
 ## 📊 Benchmark Comparison & Empirical Results
 
-The models were evaluated against the human-planned baseline routes (285.00 km, 11:01 h drive time)[cite: 1]. Performance was measured using the standard Optimality Gap metric:
+The models were evaluated against the human-planned baseline routes (285.00 km, 11:01 h drive time). Performance was measured using the standard Optimality Gap metric:
 
 $$Gap_{opt} = \frac{c_{Heur} - c_{Opt}}{max(c_{Opt}, \epsilon)} \times 100\%$$
 
@@ -70,9 +70,9 @@ $$Gap_{opt} = \frac{c_{Heur} - c_{Opt}}{max(c_{Opt}, \epsilon)} \times 100\%$$
 | Clarke-Wright Savings | 5 | 268.01 km | 08:00 h | -6.34% | -37.71% |
 
 ### Key Analytical Takeaways
-* **Radial Synergy:** The **Sweep Algorithm** outperformed all heuristics due to Warsaw's concentric-radial street topology and the centralized depot position, minimizing cross-river crossings[cite: 1].
-* **Greedy Heuristic Limitation:** While **Nearest Neighbor** achieved strong distance cuts, it suffered from sub-optimal return legs due to local-only path evaluation[cite: 1].
-* **Time Windows Impact:** Tightening operational windows under VRPTW forced the allocation of a 6th vehicle[cite: 1]. Although this increased overall fleet travel compared to the unconstrained 5-truck model, it still reduced total network runtime by over 43% versus baseline planning[cite: 1].
+* **Radial Synergy:** The **Sweep Algorithm** outperformed all heuristics due to Warsaw's concentric-radial street topology and the centralized depot position, minimizing cross-river crossings.
+* **Greedy Heuristic Limitation:** While **Nearest Neighbor** achieved strong distance cuts, it suffered from sub-optimal return legs due to local-only path evaluation.
+* **Time Windows Impact:** Tightening operational windows under VRPTW forced the allocation of a 6th vehicle. Although this increased overall fleet travel compared to the unconstrained 5-truck model, it still reduced total network runtime by over 43% versus baseline planning.
 
 ---
 
