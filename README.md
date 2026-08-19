@@ -13,9 +13,11 @@ Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel
 
 ### Input: Retail Distribution Network (50 Nodes + Depot)
 ![Distribution Network](cvrp_nodes.jpg)
+🌐 [Open Interactive Input Map](https://mz-analytics.github.io/vrp-logistics-optimizer/trasy_bazowe_osm.html)
 
-### Output: Optimized Vehicle Routes (Tabu Search)
-📄 [Download Full Route Optimization Report (PDF)](cvrp_routes_optimized.pdf)
+### Output: Optimized Vehicle Routes (Clarke-Wright)
+📄 [Download Full PDF Report](cvrp_routes_optimized.pdf)  
+🌐 [Open Interactive Route Map](https://mz-analytics.github.io/vrp-logistics-optimizer/trasy_ciezarowek_clarke_wright_osm.html)
 
 ---
 
