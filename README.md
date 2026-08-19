@@ -45,7 +45,7 @@ The objective is to optimize urban last-mile distribution logistics for a retail
    * Real road network shortest distance matrix ($51 \times 51$) computed using Dijkstra's algorithm via `NetworkX`[cite: 1].
 
 2. **Implemented Solvers:**
-   * *Sweep Algorithm (Polar Angle Method):** Angular transformation relative to the central depot ($\alpha_p = \operatorname{atan2}(\Delta y, \Delta x)$) followed by radial sector clustering and route sequencing.
+   * **Sweep Algorithm (Polar Angle Method):** Angular transformation relative to the central depot (`atan2(Δy, Δx)`) followed by radial sector clustering and route sequencing.
    * **Clarke-Wright Savings Algorithm:** Iterative route merging maximizing edge savings ($s_{ij} = c_{0i} + c_{0j} - c_{ij}$) subject to capacity and cycle elimination constraints[cite: 1].
    * **Nearest Neighbor (NN):** Greedy sequential node insertion minimizing step-by-step connection costs[cite: 1].
    * **VRPTW Handling:** Heuristic load re-allocation and penalty constraints enforcing strict operational windows and driver service times[cite: 1].
