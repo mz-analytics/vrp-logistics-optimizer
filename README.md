@@ -4,6 +4,7 @@
 ![OSMnx](https://img.shields.io/badge/OSMnx-GIS%20Routing-blue?style=flat)
 ![NetworkX](https://img.shields.io/badge/NetworkX-Graph%20Theory-orange?style=flat)
 ![Folium](https://img.shields.io/badge/Folium-Interactive%20Maps-77B829?style=flat&logo=leaflet&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat)
 
 Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel-time constraints, optimized over real-world road networks (Warsaw, Poland).
 
@@ -12,13 +13,17 @@ Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel
 ## 🗺️ Visual Results
 
 ### Input: Retail Distribution Network (50 Nodes + Depot)
-![Distribution Network](cvrp_nodes.jpg)
+![Distribution Network](trasy_bazowe.png)
 
-🌐 [Open Interactive Input Map](https://mz-analytics.github.io/vrp-logistics-optimizer/trasy_bazowe_osm.html)
+### Routing Strategy Comparison
 
-### Output: Optimized Vehicle Routes (Clarke-Wright)
-📄 [Download Full PDF Report](cvrp_routes_optimized.pdf)  
-🌐 [Open Interactive Route Map](https://mz-analytics.github.io/vrp-logistics-optimizer/trasy_ciezarowek_clarke_wright_osm.html)
+| Clarke-Wright Savings (Optimized) | Sweep Algorithm |
+| :---: | :---: |
+| ![Clarke-Wright](trasy_ciezarowek_clarke_wright.png) | ![Sweep](trasy_ciezarowek_sweep.png) |
+
+| Multi-Fleet Variant (CW 6 Vehicles) | Fast Clarke-Wright Route |
+| :---: | :---: |
+| ![Clarke-Wright 6](trasy_ciezarowek_clarke_wright_6.png) | ![CW Baseline](trasy_ciezarowek_cw.png) |
 
 ---
 
@@ -26,7 +31,7 @@ Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel
 * **Real-World Graph Engine:** Street network topology extraction and traversal using `OSMnx` & `NetworkX`.
 * **Heuristic Routing:** Nearest Neighbor (NN), Sweep Algorithm, Clarke-Wright Savings (CW).
 * **Metaheuristic Optimization:** Tabu Search (Relocate, Swap, 2-opt moves) with dynamic tenure.
-* **GIS Visualizations:** Multi-layer interactive HTML route maps generated with `Folium`.
+* **GIS Visualizations:** Multi-layer route maps generated with `Folium`.
 
 ---
 
@@ -43,7 +48,7 @@ Capacitated Vehicle Routing Problem (CVRP) solver with fleet capacity and travel
 ## 🚀 Installation & Usage
 
 ```bash
-# 1. Clone repository & enter folder
+# 1. Clone repository
 git clone [https://github.com/mz-analytics/vrp-logistics-optimizer.git](https://github.com/mz-analytics/vrp-logistics-optimizer.git)
 cd vrp-logistics-optimizer
 
