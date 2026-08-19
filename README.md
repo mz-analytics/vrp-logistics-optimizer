@@ -1,3 +1,4 @@
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=flat&logo=github&logoColor=white)](https://github.com/mz-analytics/vrp-logistics-optimizer)
 # Vehicle Routing Problem (VRP) Logistics Optimizer
 
 Optimization tool solving multi-vehicle routing problems with capacity and driving time constraints using real road networks.
